@@ -1,0 +1,15 @@
+{
+    "stringPrefs": [
+        {
+            "key": "SelectModuleToggle_YG2",
+            "value": "PluginYG2;TextGameLoad;InterstitialAdv;RewardedAdv;EnvirData;Authorization;Storage;PlayerStats;RedefinePlayerPrefs;Localization;AutoTranslateLangs;Review;StickyAdv;ServerTime;Fullscreen;OpenURL;GameLabel;QuitGameEvent;Clipboard;BannerAdv"
+        }
+    ],
+    "intPrefs": [
+        {
+            "key": "FirstStartup_YG2",
+            "value": 2
+        }
+    ],
+    "floatPrefs": []
+}
