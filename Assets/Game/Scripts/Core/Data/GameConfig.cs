@@ -3,7 +3,8 @@ using UnityEngine;
 
 namespace Game.Scripts.Core.Data
 {
-    public class GameConfig
+    [CreateAssetMenu(fileName = "GameConfig", menuName = "Game/Game Config")]
+    public class GameConfig : ScriptableObject
     {
         [SerializeField] private GameStateType _defaultGameState;
 

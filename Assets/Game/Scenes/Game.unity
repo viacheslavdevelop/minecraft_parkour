@@ -816,6 +816,7 @@ MonoBehaviour:
   autoRun: 1
   autoInjectGameObjects: []
   _playerConfig: {fileID: 11400000, guid: 6da2bfbf9db75a54d8e18fc7f00ea10f, type: 2}
+  _gameConfig: {fileID: 11400000, guid: 2b53c9235b8dc9c4a8d32df8f166677c, type: 2}
 --- !u!4 &1930166998
 Transform:
   m_ObjectHideFlags: 0

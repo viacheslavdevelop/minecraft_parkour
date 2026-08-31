@@ -19,6 +19,9 @@ namespace Game.Scripts.Player
             builder.Register<PlayerRotator>(Lifetime.Singleton).As<IRotatable>();
             builder.RegisterEntryPoint<TickMoveExecutor>();
             builder.RegisterEntryPoint<LateTickRotateExecutor>();
+            builder.Register<DesktopCursorController>(Lifetime.Singleton).As<ICursorController>();
+            builder.RegisterBuildCallback(resolver => resolver.Resolve<ICursorController>());
+
         }
     }
 }

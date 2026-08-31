@@ -25,7 +25,6 @@ namespace Game.Scripts.Player.Data
         public void Construct()
         {
             Sensitivity = Mathf.Clamp(_defaultSensitivity, _minSensitivity, _maxSensitivity);
-            Debug.Log(Sensitivity);
         }
     }
 }
