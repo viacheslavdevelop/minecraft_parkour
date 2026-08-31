@@ -23,7 +23,6 @@ namespace Game.Scripts.Player
         
         public void Rotate(Vector2 direction, float sensitivity, float deltaTime)
         {
-            //Debug.Log(sensitivity);
             _yRotation += direction.x * sensitivity * deltaTime;
             _xRotation -= direction.y * sensitivity * deltaTime;
 

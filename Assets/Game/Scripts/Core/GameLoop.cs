@@ -1,3 +1,5 @@
+using Game.Scripts.Core.Abstractions;
+using Game.Scripts.Core.GameState;
 using Game.Scripts.GameInput.Abstractions;
 using Game.Scripts.Player.Data;
 using Game.Scripts.Player.Input;
@@ -13,6 +15,7 @@ namespace Game.Scripts.Core
         
         protected override void Configure(IContainerBuilder builder)
         {
+            builder.Register<GameStateMachine>(Lifetime.Singleton).As<IGameStateProvider>();
             builder.RegisterInstance(_playerConfig);
             builder.RegisterBuildCallback(resolver => resolver.Inject(_playerConfig));
             builder.Register<PlayerMoveInput>(Lifetime.Singleton).As<IMoveInput>();
