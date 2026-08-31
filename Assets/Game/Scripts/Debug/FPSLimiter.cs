@@ -1,11 +1,14 @@
 using UnityEngine;
 
-public class FPSLimiter : MonoBehaviour
+namespace Game.Scripts.Debug
 {
-    [SerializeField] private int _targetFPS;
-    
-    void Start()
+    public class FPSLimiter : MonoBehaviour
     {
-        Application.targetFrameRate = _targetFPS;
+        [SerializeField] private int _targetFPS;
+    
+        void Start()
+        {
+            Application.targetFrameRate = _targetFPS;
+        }
     }
 }
