@@ -1,6 +1,7 @@
 using Game.Scripts.GameInput.Abstractions;
 using Game.Scripts.Player;
 using Game.Scripts.Player.Data;
+using Game.Scripts.Player.Input;
 using UnityEngine;
 using VContainer;
 using VContainer.Unity;
@@ -15,6 +16,7 @@ namespace Game.Scripts.Core
         {
             builder.RegisterInstance(_playerConfig);
             builder.Register<PlayerMoveInput>(Lifetime.Singleton).As<IMoveInput>();
+            builder.Register<PlayerRotateInput>(Lifetime.Singleton).As<IRotateInput>();
         }
     }
 }

@@ -4,7 +4,7 @@ using Game.Scripts.Player.Abstractions;
 using Game.Scripts.Player.Data;
 using UnityEngine;
 
-namespace Game.Scripts.Player
+namespace Game.Scripts.Player.TickExecutors
 {
     public class TickMoveExecutor : ITickExecutable
     {

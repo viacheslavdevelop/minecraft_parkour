@@ -13,3 +13,6 @@ MonoBehaviour:
   m_Name: PlayerConfig
   m_EditorClassIdentifier: 
   <MaxSpeed>k__BackingField: 8
+  <Sensitivity>k__BackingField: 2000
+  <MaxPitch>k__BackingField: 89
+  <MinPitch>k__BackingField: -89
