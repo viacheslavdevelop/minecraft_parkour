@@ -1,6 +1,6 @@
 using UnityEngine;
 
-namespace Game.Scripts.Debug
+namespace Game.Scripts.DebugTools
 {
     public class FPSLimiter : MonoBehaviour
     {
