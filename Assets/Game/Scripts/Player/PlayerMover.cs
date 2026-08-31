@@ -8,10 +8,10 @@ namespace Game.Scripts.Player
         private CharacterController _characterController;
         private Transform _characterTransform;
 
-        private PlayerMover(CharacterController characterController, Transform characterTransform)
+        private PlayerMover(CharacterController characterController)
         {
             _characterController = characterController;
-            _characterTransform = characterTransform;
+            _characterTransform = characterController.transform;
         }
         
         public void Move(Vector2 direction, float deltaTime, float moveSpeed)
