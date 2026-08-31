@@ -2,7 +2,6 @@
 using Game.Scripts.GameInput.Abstractions;
 using Game.Scripts.Player.Abstractions;
 using Game.Scripts.Player.Data;
-using UnityEngine;
 
 namespace Game.Scripts.Player.TickExecutors
 {
@@ -23,7 +22,7 @@ namespace Game.Scripts.Player.TickExecutors
         
         public void LateTick()
         {
-            _rotatable.Rotate(_rotateInput.RotateAxis, _sensitivity, Time.deltaTime);
+            _rotatable.Rotate(_rotateInput.RotateAxis, _sensitivity, 1);
         }
     }
 }

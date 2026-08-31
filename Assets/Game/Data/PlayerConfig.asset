@@ -12,7 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 897d185d3a9707c409eef403af466154, type: 3}
   m_Name: PlayerConfig
   m_EditorClassIdentifier: 
-  <MaxSpeed>k__BackingField: 8
-  <Sensitivity>k__BackingField: 2000
-  <MaxPitch>k__BackingField: 89
-  <MinPitch>k__BackingField: -89
+  _maxSpeed: 8
+  _defaultSensitivity: 2
+  _minSensitivity: 0.1
+  _maxSensitivity: 10
+  _maxPitch: 89
+  _minPitch: -89

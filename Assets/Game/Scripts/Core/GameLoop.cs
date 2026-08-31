@@ -1,5 +1,4 @@
 using Game.Scripts.GameInput.Abstractions;
-using Game.Scripts.Player;
 using Game.Scripts.Player.Data;
 using Game.Scripts.Player.Input;
 using UnityEngine;
@@ -15,6 +14,7 @@ namespace Game.Scripts.Core
         protected override void Configure(IContainerBuilder builder)
         {
             builder.RegisterInstance(_playerConfig);
+            builder.RegisterBuildCallback(resolver => resolver.Inject(_playerConfig));
             builder.Register<PlayerMoveInput>(Lifetime.Singleton).As<IMoveInput>();
             builder.Register<PlayerRotateInput>(Lifetime.Singleton).As<IRotateInput>();
         }
