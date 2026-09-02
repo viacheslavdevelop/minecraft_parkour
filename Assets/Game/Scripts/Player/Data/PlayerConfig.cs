@@ -16,10 +16,18 @@ namespace Game.Scripts.Player.Data
         [SerializeField] private float _maxPitch;
         [SerializeField] private float _minPitch;
 
+        [Header("Gravity")] 
+        [SerializeField] private float _gravity;
+        [SerializeField] private LayerMask _groundLayer;
+        [SerializeField] private float _groundCheckRadius;
+
         public float MaxSpeed => _maxSpeed;
         public float Sensitivity { get; private set; }
         public float MaxPitch => _maxPitch;
         public float MinPitch => _minPitch;
+        public float Gravity => _gravity;
+        public LayerMask GroundLayer => _groundLayer;
+        public float GroundCheckRadius => _groundCheckRadius;
 
         [Inject]
         public void Construct()
