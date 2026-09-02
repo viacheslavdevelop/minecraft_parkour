@@ -18,11 +18,16 @@ namespace Game.Scripts.Player.TickExecutors
             _rotatable = rotatable;
             _rotateInput = rotateInput;
             _sensitivity = playerConfig.Sensitivity;
+
+            IsExecuting = true;
         }
         
         public void LateTick()
         {
-            _rotatable.Rotate(_rotateInput.RotateAxis, _sensitivity, 1);
+            if (IsExecuting)
+            {
+                _rotatable.Rotate(_rotateInput.RotateAxis, _sensitivity, 1);
+            }
         }
     }
 }

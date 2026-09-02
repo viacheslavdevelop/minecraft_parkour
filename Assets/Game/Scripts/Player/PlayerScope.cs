@@ -1,3 +1,5 @@
+using Game.Scripts.Gameplay;
+using Game.Scripts.Gameplay.Abstractions;
 using Game.Scripts.Player.Abstractions;
 using Game.Scripts.Player.TickExecutors;
 using UnityEngine;
@@ -21,7 +23,20 @@ namespace Game.Scripts.Player
             builder.RegisterEntryPoint<LateTickRotateExecutor>();
             builder.Register<DesktopCursorController>(Lifetime.Singleton).As<ICursorController>();
             builder.RegisterBuildCallback(resolver => resolver.Resolve<ICursorController>());
+            
+            builder.Register<LateTickExecutorPauseStopper>(Lifetime.Singleton)
+                .As<IPauseExecutionStopper>()
+                .AsSelf();
 
+            builder.Register<TickExecutorPauseStopper>(Lifetime.Singleton)
+                .As<IPauseExecutionStopper>()
+                .AsSelf();
+
+            builder.RegisterBuildCallback(resolver =>
+            {
+                resolver.Resolve<LateTickExecutorPauseStopper>();
+                resolver.Resolve<TickExecutorPauseStopper>();
+            });
         }
     }
 }

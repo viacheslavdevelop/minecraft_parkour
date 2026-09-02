@@ -8,13 +8,27 @@ namespace Game.Scripts.Gameplay.TickExecutors
     {
         public bool IsExecuting { get; set; }
         
-        private readonly IGameStateProvider _gameStateProvider;
         private readonly IPauseInput _pauseInput;
         private readonly IPausable _pausable;
+
+        public TickPauseExecutor(IPauseInput pauseInput, IPausable pausable)
+        {
+            _pauseInput = pauseInput;
+            _pausable = pausable;
+        }
         
         public void Tick()
         {
+            if (!_pauseInput.PauseButtonPressed) return;
             
+            if (_pausable.IsPause)
+            {
+                _pausable.Unpause();
+            }
+            else
+            {
+                _pausable.Pause();
+            }
         }
     }
 }

@@ -9,5 +9,7 @@ namespace Game.Scripts.Core.Abstractions
         event Action<GameStateType> OnStateExited;
     
         GameStateType CurrentGameState { get; }
+
+        void SetupState(GameStateType newState);
     }
 }

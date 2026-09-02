@@ -19,11 +19,16 @@ namespace Game.Scripts.Player.TickExecutors
             _movable = movable;
             _moveInput = moveInput;
             _maxMoveSpeed = playerConfig.MaxSpeed;
+            
+            IsExecuting = true;
         }
         
         public void Tick()
         {
-            _movable.Move(_moveInput.MoveAxis, Time.deltaTime, _maxMoveSpeed);
+            if (IsExecuting)
+            {
+                _movable.Move(_moveInput.MoveAxis, Time.deltaTime, _maxMoveSpeed);
+            }
         }
     }
 }
