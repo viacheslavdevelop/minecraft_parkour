@@ -22,5 +22,10 @@ MonoBehaviour:
   _groundLayer:
     serializedVersion: 2
     m_Bits: 1
-  _groundCheckRadius: 0.51
+  _groundCheckRadius: 0.5
   _jumpHeight: 3
+  _crownLayer:
+    serializedVersion: 2
+    m_Bits: 1
+  _checkCrownRadius: 0.34
+  _downVelocity: -2

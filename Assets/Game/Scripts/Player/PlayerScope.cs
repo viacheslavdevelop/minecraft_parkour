@@ -14,23 +14,27 @@ namespace Game.Scripts.Player
         [SerializeField] private CharacterController _characterController;
         [SerializeField] private PlayerHead _playerHead;
         [SerializeField] private PlayerFeet _playerFeet;
+        [SerializeField] private PlayerCrown _playerCrown;
         
         protected override void Configure(IContainerBuilder builder)
         {
             builder.RegisterInstance(_characterController);
             builder.RegisterInstance(_playerHead);
             builder.RegisterInstance(_playerFeet);
+            builder.RegisterInstance(_playerCrown);
             
             builder.Register<PlayerGroundChecker>(Lifetime.Singleton).As<IGroundCheckable>();
             builder.Register<PlayerMover>(Lifetime.Singleton).As<IMovable>();
             builder.Register<PlayerRotator>(Lifetime.Singleton).As<IRotatable>();
             builder.Register<PlayerGravityApplier>(Lifetime.Singleton).As<IGravityApplier>();
             builder.Register<PlayerJumper>(Lifetime.Singleton).As<IJumpable>();
+            builder.Register<CrownStuckController>(Lifetime.Singleton).As<ICrownStuckController>();
                 
             builder.RegisterEntryPoint<TickMoveExecutor>();
             builder.RegisterEntryPoint<LateTickRotateExecutor>();
             builder.RegisterEntryPoint<TickGravityExecutor>();
             builder.RegisterEntryPoint<TickJumpExecutor>();
+            builder.RegisterEntryPoint<TickCrownStuckControlExecutor>();
             
             builder.Register<DesktopCursorController>(Lifetime.Singleton).As<ICursorController>();
             builder.RegisterBuildCallback(resolver => resolver.Resolve<ICursorController>());
