@@ -1,6 +1,4 @@
 ﻿using Game.Scripts.Player.Abstractions;
-using Game.Scripts.Player.Components;
-using Game.Scripts.Player.Data;
 using UnityEngine;
 
 namespace Game.Scripts.Player
@@ -8,32 +6,19 @@ namespace Game.Scripts.Player
     public class PlayerGravityApplier : IGravityApplier
     {
         private readonly CharacterController _characterController;
-        private readonly Transform _playerFeet;
-        private readonly LayerMask _groundLayer;
-        private readonly float _groundCheckRadius;
+        private readonly IGroundCheckable _groundCheckable;
 
         private float _verticalVelocity;
-
-        public PlayerGravityApplier(
-            CharacterController characterController,
-            PlayerFeet playerFeet,
-            PlayerConfig playerConfig)
+        
+        public PlayerGravityApplier(CharacterController characterController, IGroundCheckable groundCheckable)
         {
             _characterController = characterController;
-            _playerFeet = playerFeet.transform;
-            _groundLayer = playerConfig.GroundLayer;
-            _groundCheckRadius = playerConfig.GroundCheckRadius;
+            _groundCheckable = groundCheckable;
         }
 
         public void DoGravity(float deltaTime, float gravity)
         {
-            bool isGrounded = Physics.CheckSphere(
-                _playerFeet.position,
-                _groundCheckRadius,
-                _groundLayer,
-                QueryTriggerInteraction.Ignore);
-
-            if (isGrounded && _verticalVelocity < 0f)
+            if (_groundCheckable.IsOnGround() && _verticalVelocity < 0f)
             {
                 _verticalVelocity = -2f;
             }
@@ -44,6 +29,11 @@ namespace Game.Scripts.Player
                 Vector3.up * (_verticalVelocity * deltaTime);
 
             _characterController.Move(gravityMovement);
+        }
+        
+        public void SetVerticalVelocity(float verticalVelocity)
+        {
+            _verticalVelocity = verticalVelocity;
         }
     }
 }

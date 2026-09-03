@@ -3,5 +3,6 @@
     public interface IGravityApplier
     {
         void DoGravity(float deltaTime, float gravity);
+        void SetVerticalVelocity(float verticalVelocity);
     }
 }

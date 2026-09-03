@@ -21,6 +21,9 @@ namespace Game.Scripts.Player.Data
         [SerializeField] private LayerMask _groundLayer;
         [SerializeField] private float _groundCheckRadius;
 
+        [Header("Jumping")]
+        [SerializeField] private float _jumpHeight;
+
         public float MaxSpeed => _maxSpeed;
         public float Sensitivity { get; private set; }
         public float MaxPitch => _maxPitch;
@@ -28,6 +31,7 @@ namespace Game.Scripts.Player.Data
         public float Gravity => _gravity;
         public LayerMask GroundLayer => _groundLayer;
         public float GroundCheckRadius => _groundCheckRadius;
+        public float JumpHeight => _jumpHeight;
 
         [Inject]
         public void Construct()

@@ -30,6 +30,7 @@ namespace Game.Scripts.Core
             builder.RegisterBuildCallback(resolver => resolver.Inject(_playerConfig));
             builder.Register<PlayerMoveInput>(Lifetime.Singleton).As<IMoveInput>();
             builder.Register<PlayerRotateInput>(Lifetime.Singleton).As<IRotateInput>();
+            builder.Register<DesktopJumpInput>(Lifetime.Singleton).As<IJumpInput>();
         }
     }
 }

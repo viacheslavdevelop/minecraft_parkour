@@ -18,8 +18,9 @@ MonoBehaviour:
   _maxSensitivity: 10
   _maxPitch: 89
   _minPitch: -89
-  _gravity: -9.81
+  _gravity: -30
   _groundLayer:
     serializedVersion: 2
-    m_Bits: 64
+    m_Bits: 1
   _groundCheckRadius: 0.51
+  _jumpHeight: 3
