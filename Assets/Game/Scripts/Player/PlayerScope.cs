@@ -36,7 +36,8 @@ namespace Game.Scripts.Player
             builder.RegisterEntryPoint<TickJumpExecutor>();
             builder.RegisterEntryPoint<TickCrownStuckControlExecutor>();
             
-            builder.Register<DesktopCursorController>(Lifetime.Singleton).As<ICursorController>();
+            //builder.Register<DesktopCursorController>(Lifetime.Singleton).As<ICursorController>();
+            builder.Register<MobileCursorController>(Lifetime.Singleton).As<ICursorController>();
             builder.RegisterBuildCallback(resolver => resolver.Resolve<ICursorController>());
             
             builder.Register<LateTickExecutorPauseStopper>(Lifetime.Singleton)
