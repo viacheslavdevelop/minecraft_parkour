@@ -29,3 +29,9 @@ MonoBehaviour:
     m_Bits: 1
   _checkCrownRadius: 0.34
   _downVelocity: -2
+  _stepAmount: 0.05
+  _maxStepDistance: 0.08
+  _smoothPosition: 16
+  _rotationAmount: 2
+  _maxRotationAngle: 5
+  _smoothRotation: 8

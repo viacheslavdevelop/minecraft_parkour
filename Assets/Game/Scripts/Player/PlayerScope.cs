@@ -15,6 +15,7 @@ namespace Game.Scripts.Player
         [SerializeField] private PlayerHead _playerHead;
         [SerializeField] private PlayerFeet _playerFeet;
         [SerializeField] private PlayerCrown _playerCrown;
+        [SerializeField] private PlayerHand _playerHand;
         
         protected override void Configure(IContainerBuilder builder)
         {
@@ -22,6 +23,7 @@ namespace Game.Scripts.Player
             builder.RegisterInstance(_playerHead);
             builder.RegisterInstance(_playerFeet);
             builder.RegisterInstance(_playerCrown);
+            builder.RegisterInstance(_playerHand);
             
             builder.Register<PlayerGroundChecker>(Lifetime.Singleton).As<IGroundCheckable>();
             builder.Register<PlayerMover>(Lifetime.Singleton).As<IMovable>();
@@ -29,12 +31,14 @@ namespace Game.Scripts.Player
             builder.Register<PlayerGravityApplier>(Lifetime.Singleton).As<IGravityApplier>();
             builder.Register<PlayerJumper>(Lifetime.Singleton).As<IJumpable>();
             builder.Register<CrownStuckController>(Lifetime.Singleton).As<ICrownStuckController>();
+            builder.Register<PlayerHandSway>(Lifetime.Singleton).As<IHandSway>();
                 
             builder.RegisterEntryPoint<TickMoveExecutor>();
             builder.RegisterEntryPoint<LateTickRotateExecutor>();
             builder.RegisterEntryPoint<TickGravityExecutor>();
             builder.RegisterEntryPoint<TickJumpExecutor>();
             builder.RegisterEntryPoint<TickCrownStuckControlExecutor>();
+            builder.RegisterEntryPoint<TickSwayExecutor>();
             
             builder.Register<LateTickExecutorPauseStopper>(Lifetime.Singleton)
                 .As<IPauseExecutionStopper>()

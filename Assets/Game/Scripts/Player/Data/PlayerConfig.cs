@@ -26,6 +26,15 @@ namespace Game.Scripts.Player.Data
         [SerializeField] private LayerMask _crownLayer;
         [SerializeField] private float _checkCrownRadius;
         [SerializeField] private float _downVelocity;
+        
+        [Header("Hand Sway")]
+        [SerializeField] private float _stepAmount = 0.05f;
+        [SerializeField] private float _maxStepDistance = 0.08f;
+        [SerializeField] private float _smoothPosition = 8f;
+
+        [SerializeField] private float _rotationAmount = 2f;
+        [SerializeField] private float _maxRotationAngle = 5f;
+        [SerializeField] private float _smoothRotation = 8f;
 
         public float MaxSpeed => _maxSpeed;
         public float Sensitivity { get; private set; }
@@ -38,6 +47,12 @@ namespace Game.Scripts.Player.Data
         public LayerMask CrownLayer => _crownLayer;
         public float CheckCrownRadius => _checkCrownRadius;
         public float DownVelocity => _downVelocity;
+        public float StepAmount => _stepAmount;
+        public float MaxStepDistance => _maxStepDistance;
+        public float SmoothPosition => _smoothPosition;
+        public float RotationAmount => _rotationAmount;
+        public float MaxRotationAngle => _maxRotationAngle;
+        public float SmoothRotation => _smoothRotation;
 
         [Inject]
         public void Construct()
