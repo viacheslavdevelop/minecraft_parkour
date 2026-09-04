@@ -1212,6 +1212,7 @@ GameObject:
   - component: {fileID: 998322729}
   - component: {fileID: 998322728}
   - component: {fileID: 998322727}
+  - component: {fileID: 998322730}
   m_Layer: 0
   m_Name: MobileCanvas
   m_TagString: Untagged
@@ -1304,6 +1305,18 @@ Canvas:
   m_SortingLayerID: 0
   m_SortingOrder: 0
   m_TargetDisplay: 0
+--- !u!114 &998322730
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 998322725}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c7a80d22ce314cdb8b1f35a7707f5c9f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1129079736
 GameObject:
   m_ObjectHideFlags: 0
@@ -1454,6 +1467,55 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: af00893f28e0e2c40a6f3d73b325656c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &1205053353
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1205053354}
+  - component: {fileID: 1205053355}
+  m_Layer: 0
+  m_Name: InputSelector
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1205053354
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1205053353}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1930166998}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1205053355
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1205053353}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7dc24cda09d64090a1eecc623b64c5f3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  parentReference:
+    TypeName: Game.Scripts.Core.GameLoop
+  autoRun: 1
+  autoInjectGameObjects: []
+  _mobileCanvas: {fileID: 998322730}
 --- !u!1 &1725038095
 GameObject:
   m_ObjectHideFlags: 0
@@ -1499,7 +1561,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   parentReference:
-    TypeName: Game.Scripts.Core.GameLoop
+    TypeName: Game.Scripts.Gameplay.InputSelector
   autoRun: 1
   autoInjectGameObjects: []
   _characterController: {fileID: 639596688}
@@ -1862,6 +1924,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
+  - {fileID: 1205053354}
   - {fileID: 1725038096}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
