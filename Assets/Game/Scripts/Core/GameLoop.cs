@@ -1,9 +1,12 @@
 using Game.Scripts.Core.Abstractions;
 using Game.Scripts.Core.Data;
 using Game.Scripts.Core.GameState;
+using Game.Scripts.Core.Saves;
 using Game.Scripts.GameInput.Abstractions;
 using Game.Scripts.Gameplay;
 using Game.Scripts.Gameplay.Abstractions;
+using Game.Scripts.Gameplay.Components;
+using Game.Scripts.Gameplay.Data;
 using Game.Scripts.Gameplay.Input;
 using Game.Scripts.Gameplay.TickExecutors;
 using Game.Scripts.Player.Components;
@@ -31,6 +34,9 @@ namespace Game.Scripts.Core
             builder.RegisterInstance(_gameConfig);
             builder.RegisterInstance(_touchPanel);
             
+            builder.RegisterEntryPoint<SmartSave>().AsSelf();
+
+            builder.Register<EndLevelHandler>(Lifetime.Singleton).As<IEndLevelHandler>();
             builder.Register<GameStateMachine>(Lifetime.Singleton).As<IGameStateProvider>();
             builder.Register<DesktopPauseInput>(Lifetime.Singleton).As<IPauseInput>();
             builder.Register<GamePauser>(Lifetime.Singleton).As<IPausable>();

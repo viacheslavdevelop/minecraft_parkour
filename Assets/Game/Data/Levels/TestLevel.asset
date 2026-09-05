@@ -9,10 +9,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 99f3c4ab78c1477cafde5035658f34e5, type: 3}
-  m_Name: GameConfig
+  m_Script: {fileID: 11500000, guid: fccda03862b34e0b957d160217a9a743, type: 3}
+  m_Name: TestLevel
   m_EditorClassIdentifier: 
-  _mainMenuSceneName: MainMenu
-  _defaultGameState: 0
-  _debounceSeconds: 0.5
-  _maxDelaySeconds: 5
+  _levelID: test
