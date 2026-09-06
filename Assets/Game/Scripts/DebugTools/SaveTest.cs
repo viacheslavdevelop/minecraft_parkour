@@ -10,11 +10,6 @@ namespace Game.Scripts.DebugTools
     {
         private SmartSave _smartSave;
 
-        private void Start()
-        {
-            print(YG2.saves.CompletedLevels);
-        }
-
         [Inject]
         public void Construct(SmartSave smartSave)
         {
