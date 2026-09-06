@@ -5,13 +5,10 @@ using Game.Scripts.Core.Saves;
 using Game.Scripts.GameInput.Abstractions;
 using Game.Scripts.Gameplay;
 using Game.Scripts.Gameplay.Abstractions;
-using Game.Scripts.Gameplay.Components;
-using Game.Scripts.Gameplay.Data;
 using Game.Scripts.Gameplay.Input;
 using Game.Scripts.Gameplay.TickExecutors;
 using Game.Scripts.Player.Components;
 using Game.Scripts.Player.Data;
-using Game.Scripts.Player.Input;
 using Game.Scripts.UI;
 using UnityEngine;
 using VContainer;
@@ -22,7 +19,6 @@ namespace Game.Scripts.Core
     public class GameLoop : LifetimeScope
     {
         [SerializeField] private PlayerConfig _playerConfig;
-        [SerializeField] private GameConfig _gameConfig;
         [SerializeField] private Joystick _joystick;
         [SerializeField] private JumpButton _jumpButton;
         [SerializeField] private TouchPanel _touchPanel;
@@ -31,7 +27,6 @@ namespace Game.Scripts.Core
         {
             builder.RegisterInstance(_joystick);
             builder.RegisterInstance(_jumpButton);
-            builder.RegisterInstance(_gameConfig);
             builder.RegisterInstance(_touchPanel);
             
             builder.RegisterEntryPoint<SmartSave>().AsSelf();

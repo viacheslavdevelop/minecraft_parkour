@@ -10,21 +10,21 @@ namespace Game.Scripts.Gameplay.Components
     [RequireComponent(typeof(SphereCollider))]
     public class EndPoint : MonoBehaviour
     {
+        public LevelData LevelData { get; set; }
+        
         private IEndLevelHandler _endLevelHandler;
-        private LevelData _levelData;
 
         [Inject]
-        public void Construct(IEndLevelHandler endLevelHandler, Level level)
+        public void Construct(IEndLevelHandler endLevelHandler)
         {
             _endLevelHandler = endLevelHandler;
-            _levelData = level.LevelData;
         }
 
         private void OnTriggerEnter(Collider other)
         {
             if (other.GetComponent<PlayerGameObject>() != null)
             {
-                _endLevelHandler.HandleEndLevel(_levelData.LevelID);
+                _endLevelHandler.HandleEndLevel(LevelData.LevelID);
             }
         }
     }

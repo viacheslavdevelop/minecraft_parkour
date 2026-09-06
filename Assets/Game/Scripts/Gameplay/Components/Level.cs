@@ -1,7 +1,6 @@
 using Game.Scripts.Gameplay.Data;
 using UnityEngine;
 using VContainer;
-using YG;
 
 namespace Game.Scripts.Gameplay.Components
 {
@@ -28,6 +27,7 @@ namespace Game.Scripts.Gameplay.Components
             _objectResolver = objectResolver;
             
             _objectResolver.Inject(_endPoint);
+            _endPoint.LevelData = _levelData;
         }
     }
 }

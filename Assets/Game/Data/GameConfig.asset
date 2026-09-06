@@ -13,6 +13,10 @@ MonoBehaviour:
   m_Name: GameConfig
   m_EditorClassIdentifier: 
   _mainMenuSceneName: MainMenu
+  _gameplaySceneName: Game
   _defaultGameState: 0
   _debounceSeconds: 0.5
   _maxDelaySeconds: 5
+  _levels:
+  - {fileID: 3923781798519178537, guid: 002c73474d3a6a449a5f698158ba4356, type: 3}
+  - {fileID: 3923781798519178537, guid: 63cc7ac78551cf2498ee84443b26779e, type: 3}
