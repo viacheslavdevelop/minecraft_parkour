@@ -1,15 +1,15 @@
-using Game.Scripts.Gameplay.Abstractions;
-using Game.Scripts.Gameplay.Data;
+﻿using Game.Scripts.Gameplay.Abstractions;
+using Game.Scripts.Gameplay.Components;
 
 namespace Game.Scripts.Gameplay
 {
     public class LevelProvider : ILevelProvider
     {
-        public LevelStruct LevelStruct { get; set; }
+        public Level Level { get; set; }
 
-        public LevelProvider(LevelStruct defaultLevel)
+        public LevelProvider(Level defaultLevel)
         {
-            LevelStruct = defaultLevel;
+            Level = defaultLevel;
         }
     }
 }

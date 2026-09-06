@@ -15,8 +15,7 @@ namespace Game.Scripts.Gameplay
         {
             _gameStateProvider = gameStateProvider;
         }
-
-
+        
         public void Pause()
         {
             Time.timeScale = 0;

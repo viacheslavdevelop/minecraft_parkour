@@ -14,10 +14,10 @@ namespace Game.Scripts.Gameplay.Components
         private LevelData _levelData;
 
         [Inject]
-        public void Construct(IEndLevelHandler endLevelHandler, ILevelProvider levelProvider)
+        public void Construct(IEndLevelHandler endLevelHandler, Level level)
         {
             _endLevelHandler = endLevelHandler;
-            _levelData = levelProvider.LevelStruct.LevelData;
+            _levelData = level.LevelData;
         }
 
         private void OnTriggerEnter(Collider other)
